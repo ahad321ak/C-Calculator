@@ -13,7 +13,7 @@ int main(){
     char operator = '\0';
     char trig_ratio = '\0';
 
-    printf("Choose an operator(+ - * / or T(rigonometry)): ");
+    printf("Choose an operator(+ - * / S(quare) R(oot) P(ower) or T(rigonometry)): ");
     scanf("%c", &operator);
 
     switch (operator)
@@ -64,6 +64,33 @@ int main(){
             printf("The answer is: %.2f", answer);
             break;
         }
+    case 'S':
+        printf("Choose a Number: ");
+        scanf("%f", &a);
+
+        answer = a*a;
+        printf("The square of %.2f is: %.2f",a ,answer);
+        break;
+
+    case 'R':
+        printf("Choose a Number: ");
+        scanf("%f", &a);
+    
+        answer = sqrt(a);
+        printf("The square root of %f is: %.2f",a ,answer);
+        break;
+
+    case 'P':
+        printf("Choose a Number: ");
+        scanf("%f", &a);
+
+        printf("Choose another Number: ");
+        scanf("%f", &b);
+
+        answer = pow(a, b);
+        printf("The power of %.2f raised to %.2f is: %.2f",a ,b ,answer);
+        break;
+
     case 'T':
         printf("Enter an Angle: ");
         scanf("%f", &angle);
@@ -94,7 +121,7 @@ int main(){
         }
         break;
     default:
-        printf("Enter a valid operator!(+ - * /)");
+        printf("Enter a valid operator!(+ - * / T)");
     }
 
 }
