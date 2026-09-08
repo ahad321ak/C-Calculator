@@ -13,7 +13,7 @@ int main(){
     char operator = '\0';
     char trig_ratio = '\0';
 
-    printf("Choose an operator(+ - * / S(quare) R(oot) P(ower) or T(rigonometry)): ");
+    printf("Choose an operator(+ - * / S(quare) R(oot) P(ower) L(og) or T(rigonometry)): ");
     scanf("%c", &operator);
 
     switch (operator)
@@ -90,7 +90,20 @@ int main(){
         answer = pow(a, b);
         printf("The power of %.2f raised to %.2f is: %.2f",a ,b ,answer);
         break;
+    
+    case 'L':
+        printf("Choose a Number: ");
+        scanf("%f", &a);
 
+        if (a > 0){
+            answer = log(a);
+            printf("The log of %.2f is %f",a ,answer);
+            break;
+        }
+        else{
+            printf("You can not take log of a negative number.");
+            break;
+        }
     case 'T':
         printf("Enter an Angle: ");
         scanf("%f", &angle);
