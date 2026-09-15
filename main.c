@@ -6,7 +6,7 @@
 
 int main(){
     // Calculator
-    printf("Welcome to Calculator V 0.1\n");
+    printf("Welcome to Calculator V 1.0\n");
     int trig_ratio = 0;
     float a = 0.0;
     float b = 0.0;
