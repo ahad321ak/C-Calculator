@@ -1,17 +1,19 @@
 #include <stdio.h>
 #include <math.h>
+#include <string.h>
 
 #define PI 3.14159265358979323846
 
 int main(){
     // Calculator
     printf("Welcome to Calculator V 0.1\n");
+    int trig_ratio = 0;
     float a = 0.0;
     float b = 0.0;
     float angle = 0.0;
     float answer = 0.0;
     char operator = '\0';
-    char trig_ratio = '\0';
+
 
     printf("Choose an operator(+ - * / S(quare) R(oot) P(ower) L(og) or T(rigonometry)): ");
     scanf("%c", &operator);
@@ -95,7 +97,7 @@ int main(){
         printf("Choose a Number: ");
         scanf("%f", &a);
 
-        if (a > 0){
+        if (a >= 0){
             answer = log(a);
             printf("The log of %.2f is %f",a ,answer);
             break;
@@ -109,28 +111,44 @@ int main(){
         scanf("%f", &angle);
         getchar();
         angle = angle * PI/180;
-        printf("Select a trigonometic ratio!\n");
-        printf("S(ine), C(osine), T(angent): ");
-        scanf("%c", &trig_ratio);
-        if (trig_ratio == 'S'){
+        printf("Select the number of the trigonometic ratio you want!\n");
+        printf("1. Sin\n");
+        printf("2. Cos\n");
+        printf("3. Tan\n");
+        printf("4. Cot\n");
+        printf("5. Sec\n");
+        printf("6. Cosec\n");
+        scanf("%d", &trig_ratio);
+        getchar();
+        switch (trig_ratio)
+        {
+        case 1:
             answer = sin(angle);
-            printf("The answer is: %.2f", answer);
+            printf("The answer is %.2f", answer);
             break;
-        }   
-        else if (trig_ratio == 'C')
-        {
+        case 2:
             answer = cos(angle);
-            printf("The answer is: %.2f", answer);
+            printf("The answer is %.2f", answer);
             break;
-        }
-        else if (trig_ratio == 'T')
-        {
+        case 3:
             answer = tan(angle);
-            printf("The answer is: %.2f", answer);
+            printf("The answer is %.2f", answer);
             break;
-        }
-        else{
-            printf("Enter a Valid Ratio");
+        case 4:
+            answer = 1 / tan(angle);
+            printf("The answer is %.2f", answer);
+            break;
+        case 5:
+            answer = 1 / cos(angle);
+            printf("The answer is %.2f", answer);
+            break;
+        case 6:
+            answer = 1 / sin(angle);
+            printf("The answer is %.2f", answer);
+            break;
+        default:
+            printf("Enter a Valid operation");
+            break;
         }
         break;
     default:
