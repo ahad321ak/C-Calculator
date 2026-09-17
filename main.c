@@ -6,7 +6,7 @@
 
 int main(){
     // Calculator
-    printf("Welcome to Calculator V 1.0\n");
+    printf("Welcome to Calculator V 1.1\n");
     int trig_ratio = 0;
     float a = 0.0;
     float b = 0.0;
@@ -15,7 +15,12 @@ int main(){
     char operator = '\0';
 
 
-    printf("Choose an operator(+ - * / S(quare) R(oot) P(ower) L(og) or T(rigonometry)): ");
+    printf("Choose an operator(+ - * /)\n");
+    printf("Taking Square: S\n");
+    printf("Taking Sqaure Root: R\n");
+    printf("Taking Power: P\n");
+    printf("Taking Log: L\n");
+    printf("Trigonometry: T\n");
     scanf("%c", &operator);
 
     switch (operator)
