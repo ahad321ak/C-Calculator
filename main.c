@@ -157,7 +157,7 @@ int main(){
         }
         break;
     default:
-        printf("Enter a valid operator!(+ - * / T)");
+        printf("Enter a valid operator!");
     }
 
 }
