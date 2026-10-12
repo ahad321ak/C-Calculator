@@ -116,7 +116,7 @@ int main(){
                 break;
             }
             else{
-                printf("You can not take log of a negative number.");
+                printf("You can not take log of a negative number.\n");
                 break;
             }
         case 'T':
