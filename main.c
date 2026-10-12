@@ -13,151 +13,159 @@ int main(){
     float angle = 0.0;
     float answer = 0.0;
     char operator = '\0';
+    int i = 1;
 
-
-    printf("Choose an operator(+ - * /)\n");
-    printf("Taking Square: S\n");
-    printf("Taking Sqaure Root: R\n");
-    printf("Taking Power: P\n");
-    printf("Taking Log: L\n");
-    printf("Trigonometry: T\n");
-    scanf("%c", &operator);
-
-    switch (operator)
+    while(i == 1)
     {
-    case '+':
-        printf("Choose a number: ");
-        scanf("%f", &a);
+        printf("Choose an operator(+ - * /)\n");
+        printf("Taking Square: S\n");
+        printf("Taking Sqaure Root: R\n");
+        printf("Taking Power: P\n");
+        printf("Taking Log: L\n");
+        printf("Trigonometry: T\n");
+        printf("Enter 'Q' to exit: \n");
+        scanf("%c", &operator);
+
         
-        printf("Choose another number: ");
-        scanf("%f", &b);
-
-        answer = a + b;
-        printf("The answer is: %.2f", answer);
-        break;
-    case '-':
-        printf("Choose a number: ");
-        scanf("%f", &a);
-
-        printf("Choose another number: ");
-        scanf("%f", &b);
-        
-        answer = a - b;
-        printf("The answer is: %.2f", answer);
-        break;
-    case '*':
-        printf("Choose a number: ");
-        scanf("%f", &a);
-
-        printf("Choose another number: ");
-        scanf("%f", &b);
-        
-        answer = a * b;
-        printf("The answer is: %.2f", answer);
-        break;
-    case '/':
-        printf("Choose a number: ");
-        scanf("%f", &a);
-
-        printf("Choose another number: ");
-        scanf("%f", &b);
-        if (b == 0){
-            printf("You can't divide by zero");
-            break;
-        }
-        else
-        {
-            answer = a / b;
-            printf("The answer is: %.2f", answer);
-            break;
-        }
-    case 'S':
-        printf("Choose a Number: ");
-        scanf("%f", &a);
-
-        answer = a*a;
-        printf("The square of %.2f is: %.2f",a ,answer);
-        break;
-
-    case 'R':
-        printf("Choose a Number: ");
-        scanf("%f", &a);
     
-        answer = sqrt(a);
-        printf("The square root of %f is: %.2f",a ,answer);
-        break;
-
-    case 'P':
-        printf("Choose a Number: ");
-        scanf("%f", &a);
-
-        printf("Choose another Number: ");
-        scanf("%f", &b);
-
-        answer = pow(a, b);
-        printf("The power of %.2f raised to %.2f is: %.2f",a ,b ,answer);
-        break;
-    
-    case 'L':
-        printf("Choose a Number: ");
-        scanf("%f", &a);
-
-        if (a >= 0){
-            answer = log(a);
-            printf("The log of %.2f is %f",a ,answer);
-            break;
-        }
-        else{
-            printf("You can not take log of a negative number.");
-            break;
-        }
-    case 'T':
-        printf("Enter an Angle: ");
-        scanf("%f", &angle);
-        getchar();
-        angle = angle * PI/180;
-        printf("Select the number of the trigonometic ratio you want!\n");
-        printf("1. Sin\n");
-        printf("2. Cos\n");
-        printf("3. Tan\n");
-        printf("4. Cot\n");
-        printf("5. Sec\n");
-        printf("6. Cosec\n");
-        scanf("%d", &trig_ratio);
-        getchar();
-        switch (trig_ratio)
+        switch (operator)
         {
-        case 1:
-            answer = sin(angle);
-            printf("The answer is %.2f", answer);
+        case 'Q':
+            i = 2;
             break;
-        case 2:
-            answer = cos(angle);
-            printf("The answer is %.2f", answer);
+        case '+':
+            printf("Choose a number: ");
+            scanf("%f", &a);
+        
+            printf("Choose another number: ");
+            scanf("%f", &b);
+
+            answer = a + b;
+            printf("The answer is: %.2f\n", answer);
             break;
-        case 3:
-            answer = tan(angle);
-            printf("The answer is %.2f", answer);
+        case '-':
+            printf("Choose a number: ");
+            scanf("%f", &a);
+
+            printf("Choose another number: ");
+            scanf("%f", &b);
+        
+            answer = a - b;
+            printf("The answer is: %.2f\n", answer);
             break;
-        case 4:
-            answer = 1 / tan(angle);
-            printf("The answer is %.2f", answer);
+        case '*':
+            printf("Choose a number: ");
+            scanf("%f", &a);
+
+            printf("Choose another number: ");
+            scanf("%f", &b);
+        
+            answer = a * b;
+            printf("The answer is: %.2f\n", answer);
             break;
-        case 5:
-            answer = 1 / cos(angle);
-            printf("The answer is %.2f", answer);
+        case '/':
+            printf("Choose a number: ");
+            scanf("%f", &a);
+
+            printf("Choose another number: ");
+            scanf("%f", &b);
+            if (b == 0){
+                printf("You can't divide by zero\n");
+                break;
+            }
+            else
+            {
+                answer = a / b;
+                printf("The answer is: %.2f\n", answer);
+                break;
+            }
+        case 'S':
+            printf("Choose a Number: ");
+            scanf("%f", &a);
+
+            answer = a*a;
+            printf("The square of %.2f is: %.2f\n",a ,answer);
             break;
-        case 6:
-            answer = 1 / sin(angle);
-            printf("The answer is %.2f", answer);
+
+        case 'R':
+            printf("Choose a Number: ");
+            scanf("%f", &a);
+    
+            answer = sqrt(a);
+            printf("The square root of %f is: %.2f\n",a ,answer);
+            break;
+
+        case 'P':
+            printf("Choose a Number: ");
+            scanf("%f", &a);
+
+            printf("Choose another Number: ");
+            scanf("%f", &b);
+
+            answer = pow(a, b);
+            printf("The power of %.2f raised to %.2f is: %.2f\n",a ,b ,answer);
+            break;
+    
+        case 'L':
+            printf("Choose a Number: ");
+            scanf("%f", &a);
+
+            if (a >= 0){
+                answer = log(a);
+                printf("The log of %.2f is %f\n",a ,answer);
+                break;
+            }
+            else{
+                printf("You can not take log of a negative number.");
+                break;
+            }
+        case 'T':
+            printf("Enter an Angle: ");
+            scanf("%f", &angle);
+            getchar();
+            angle = angle * PI/180;
+            printf("Select the number of the trigonometic ratio you want!\n");
+            printf("1. Sin\n");
+            printf("2. Cos\n");
+            printf("3. Tan\n");
+            printf("4. Cot\n");
+            printf("5. Sec\n");
+            printf("6. Cosec\n");
+            scanf("%d", &trig_ratio);
+            getchar();
+            switch (trig_ratio)
+            {
+            case 1:
+                answer = sin(angle);
+                printf("The answer is %.2f\n", answer);
+                break;
+            case 2:
+                answer = cos(angle);
+                printf("The answer is %.2f\n", answer);
+                break;
+            case 3:
+                answer = tan(angle);
+                printf("The answer is %.2f\n", answer);
+                break;
+            case 4:
+                answer = 1 / tan(angle);
+                printf("The answer is %.2f\n", answer);
+                break;
+            case 5:
+                answer = 1 / cos(angle);
+                printf("The answer is %.2f\n", answer);
+                break;
+            case 6:
+                answer = 1 / sin(angle);
+                printf("The answer is %.2f\n", answer);
+                break;
+            default:
+                printf("Enter a Valid operation\n");
+                break;
+            }
             break;
         default:
-            printf("Enter a Valid operation");
-            break;
+            printf("Enter a valid operator!\n");
         }
-        break;
-    default:
-        printf("Enter a valid operator!");
     }
-
 }
